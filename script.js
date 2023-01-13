@@ -57,7 +57,7 @@ var sm = (function (undefined) {
     function action() {
         if (start !== undefined) return;
 
-        if (multipleCalls <= 3) {
+        if (multipleCalls < 3) {
             for (var i = 0; i < 3; ++i) {
                 speeds[i] = Math.random() + .5;
                 r[i] = (Math.random() * 3 | 0) * height / 3;
@@ -90,7 +90,7 @@ var sm = (function (undefined) {
         window.localStorage.setItem('spins', JSON.stringify(multipleCalls));
         $msg.html(
             r[0] === 0 && r[1] === 0 && r[2] === 0 && multipleCalls < 4 ?
-                'You won! Enjoy your Gift'
+                'You won! Enjoy your Gift..&#127881;&#127881;'
                 :
                 function limit() {
                     if (multipleCalls === 1) {
@@ -102,11 +102,11 @@ var sm = (function (undefined) {
                     }
 
                     else if (multipleCalls === 3) {
-                        $msg.html('Sorry! Better Luck Next Time.')
+                        $msg.html('Sorry! Better Luck Next Time..&#128546;')
                     }
 
                     else if (multipleCalls > 3) {
-                        $msg.html('Sorry! No more chances.')
+                        $msg.html('Sorry! No more chances..&#128542;')
                     }
                 }
         );
