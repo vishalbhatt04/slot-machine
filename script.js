@@ -57,14 +57,18 @@ var sm = (function (undefined) {
     function action() {
         if (start !== undefined) return;
 
-        for (var i = 0; i < 3; ++i) {
-            speeds[i] = Math.random() + .5;
-            r[i] = (Math.random() * 3 | 0) * height / 3;
-        }
+        if (multipleCalls <= 3) {
+            for (var i = 0; i < 3; ++i) {
+                speeds[i] = Math.random() + .5;
+                r[i] = (Math.random() * 3 | 0) * height / 3;
+            }
 
-        $msg.html('Spinning...');
-        animate();
-    }
+            $msg.html('Spinning...');
+            animate();
+        } else {
+            //DO NOTHING
+        }
+    };
 
     function animate(now) {
         if (!start) start = now;
