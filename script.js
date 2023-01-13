@@ -85,7 +85,7 @@ var sm = (function (undefined) {
         multipleCalls++;
         window.localStorage.setItem('spins', JSON.stringify(multipleCalls));
         $msg.html(
-            r[0] === 0 && r[1] === 0 && r[2] === 0 && multipleCalls < 3 ?
+            r[0] === 0 && r[1] === 0 && r[2] === 0 && multipleCalls < 4 ?
                 'You won! Enjoy your Gift'
                 :
                 function limit() {
